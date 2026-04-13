@@ -12,14 +12,14 @@ import java.io.PrintWriter;
 @WebServlet("/print")
 public class ResponseLoginSuccessServlet extends HttpServlet {
 
-    /*im.
-    *  forward 받은 서블릿에서도 요청 방식이 get이면 doget,
-    *   post이면 dopost를 오버라이딩 해야 한다.
-    *   */
+    /* comment.
+    *   forward 받은 서블릿에서도 요청 방식이 get 이면 doGet,
+    *   post 이면 doPost 를 오버라이딩 해야 한다.
+    *  */
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //Attribute -> 객체로 받아오기 떄문에 toString 해주는것.
+
         String userId = req.getAttribute("userId").toString();
         System.out.println("/print 서블릿이 전달 받은 userId : " + userId);
 
@@ -35,7 +35,7 @@ public class ResponseLoginSuccessServlet extends HttpServlet {
                 .append("</body>\n")
                 .append("</html>\n");
 
-        resp.setContentType("text/html; charset=UTF-8");
+//        resp.setContentType("text/html; charset=UTF-8");
 
         PrintWriter out = resp.getWriter();
 
@@ -43,7 +43,6 @@ public class ResponseLoginSuccessServlet extends HttpServlet {
 
         out.flush();
         out.close();
-
 
     }
 }

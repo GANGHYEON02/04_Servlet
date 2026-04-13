@@ -14,7 +14,7 @@ public class OtherServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("get 요청 수락함...");
-        //service.registUser(user); ->회원가입
+        // service.registUser(user);
         System.out.println("회원 Insert 완료..");
 
         resp.sendRedirect("/redirect");

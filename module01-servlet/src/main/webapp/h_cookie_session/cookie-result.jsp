@@ -4,7 +4,7 @@
     <title>Title</title>
 </head>
 <body>
-  <h1>쿠키에 있는 값 확인하기</h1>
-  <p>쿠키에 저장된 값 : ${savedValue}</p>
+    <h1>쿠키에 있는 값 확인하기</h1>
+    <p>쿠키에 저장 된 값 : ${savedValue}</p>
 </body>
 </html>

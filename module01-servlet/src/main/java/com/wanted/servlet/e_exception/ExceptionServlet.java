@@ -15,8 +15,8 @@ public class ExceptionServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        System.out.println("======== showerrorpage 호출됨... ========");
-
+        System.out.println("showerrorpage 호출됨..");
+        
         String forwardUrl = req.getAttribute("jakarta.servlet.forward.request_uri").toString();
         System.out.println("forwardUrl = " + forwardUrl);
 
@@ -24,8 +24,7 @@ public class ExceptionServlet extends HttpServlet {
         String msg = req.getAttribute("jakarta.servlet.error.message").toString();
 
         StringBuilder responseBuilder = new StringBuilder();
-        //append 는 달아오는것 (뒤에 추가) 이거는 같은 인스턴스 공간을 가르킴. +로 연결은 결국 다른 인스턴스 공간
-        responseBuilder.append("<doctype html>\n")
+        responseBuilder.append("<!doctype html>\n")
                 .append("<html>\n")
                 .append("<head>\n")
                 .append("</head>\n")
@@ -37,16 +36,15 @@ public class ExceptionServlet extends HttpServlet {
                 .append("</h1>")
                 .append("</body>\n")
                 .append("</html>\n");
-
-        // 해당 구문은 응답 시에 항상 해줘야 한글이 안깨진다.
-        // 요청 or 응답 할 때마다 항상 해줘야 하는건데
+        // 아래 구문은 응답 시에 항상 해줘야 한글이 안 깨진다.
+        // 요청 or 응답 할 때마다 항상 해줘야 하는 건데
         // 더 쉽게 처리할 수 있는 방법이 있지 않을까?
-//        resp.setContentType("text/html; charse=UTF-8");
+//        resp.setContentType("text/html; charset=UTF-8");
 
         PrintWriter out = resp.getWriter();
         out.print(responseBuilder);
         out.flush();
         out.close();
     }
-}
 
+}

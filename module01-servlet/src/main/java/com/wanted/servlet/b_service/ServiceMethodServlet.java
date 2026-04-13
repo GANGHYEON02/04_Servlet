@@ -11,16 +11,14 @@ import java.io.IOException;
 @WebServlet(value = "/request-service")
 public class ServiceMethodServlet extends HttpServlet {
 
-    //에러를 웹서버로 던져 보여줌
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         /* comment.
-         *   a 태그에 작성한 href 속성은 화면의 url 을 변경하는 속성이다.
-         *   url 이 변경되는 방식은 GET 방식의 요청에 해당한다.
-         *  */
+        *   a 태그에 작성한 href 속성은 화면의 url 을 변경하는 속성이다.
+        *   url 이 변경되는 방식은 GET 방식의 요청에 해당한다.
+        *  */
 
-        //사용자의 요청 방식에 따라 String 으로 다르게 저장됨
         String httpMethod = req.getMethod();
         System.out.println("httpMethod = " + httpMethod);
 

@@ -1,6 +1,5 @@
 package com.wanted.servlet.e_exception;
 
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -14,8 +13,7 @@ public class Show500Servlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("500 Servlet 호출됨");
-        resp.sendError(500, "500번 에러는 개발자의 100% 실수");
-
+        System.out.println("500 Servlet 호출됨..");
+        resp.sendError(500 , "500번 에러는 개발자의 100% 실수.");
     }
 }

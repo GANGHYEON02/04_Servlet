@@ -15,13 +15,13 @@ public class AuthServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         HttpSession session = req.getSession(false);
         String existUser = (String)session.getAttribute("loggedInUser");
 
         session.setAttribute("loggedInUser", existUser);
 
-        RequestDispatcher rd = req.getRequestDispatcher("/i_filter/auth.jsp");
+        RequestDispatcher rd = req.getRequestDispatcher("/i_fillter/auth.jsp");
         rd.forward(req, resp);
-
     }
 }

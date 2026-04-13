@@ -14,9 +14,9 @@ import java.io.IOException;
 public class SessionServlet extends HttpServlet {
 
     /* comment.
-     *   doPost : 사용자 입력 userId, userPwd 를 세션에 저장하며, 유효시간 설정
-     *   doGet : 저장 된 세션에서 값을 꺼내와 JSP 로 전달하여 결과 표시
-     *  */
+    *   doPost : 사용자 입력 userId, userPwd 를 세션에 저장하며, 유효시간 설정
+    *   doGet : 저장 된 세션에서 값을 꺼내와 JSP 로 전달하여 결과 표시
+    *  */
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -69,7 +69,12 @@ public class SessionServlet extends HttpServlet {
                 }
                 session.setMaxInactiveInterval(30);
             }
+
         }
+
         doGet(req, resp);
+
+
+
     }
 }
